@@ -1,24 +1,29 @@
 pipeline {
+
     agent any   
+
     environment {
         PATH = "/opt/maven/bin:$PATH"
     }
+
     stages {
-        stage('Build'){
+
+        stage('Build') {
             steps {
                 echo 'starting build'
                 sh "mvn clean deploy -Dmaven.test.skip=true"
                 echo 'Build and Deploy successful'
             }
+
         }
-        stage('test'){
+        stage('test') {
                 steps {
                     echo 'start testing'
                     sh 'mvn surefire-report:report'
                     echo 'end testing'
-                     
                 }
-     }
+            
+        }
         stage('SonarQube Analysis') {
             
                 environment {

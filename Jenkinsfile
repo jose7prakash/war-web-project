@@ -15,7 +15,7 @@ pipeline {
                     scannerHome = tool 'jp-sonar-scanner'
                 }
                 steps {
-                    withSonarQubeEnv('jp-sonar') {
+                    withSonarQubeEnv('jpsqser') {
                         sh "${scannerHome}/bin/sonar-scanner"
                     }
                 }

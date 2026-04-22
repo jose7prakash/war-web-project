@@ -1,8 +1,8 @@
 pipeline {
     environment {
-        PATH = "/opt/maven/bin:${env.PATH}"
+        PATH = "/opt/maven/bin:$PATH"
     }
-    Stages {
+    stages {
         stage('Build') {
             steps {
                 sh 'mvn clean package'

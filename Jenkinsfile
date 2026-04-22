@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh ...
+                sh...
                 "echo 'starting build'"
                 "mvn clean deploy -Dmaven.test.skip=true"
                 "echo 'Build and Deploy successful'"
@@ -14,7 +14,7 @@ pipeline {
             }
             stage('test') {
                 steps {
-                    sh ...
+                    sh...
                     "echo 'start testing'"
                     "mvn surefire-report:report"
                     "echo 'end testing'"

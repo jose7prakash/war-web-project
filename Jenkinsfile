@@ -4,7 +4,7 @@ pipeline {
         PATH = "/opt/maven/bin:$PATH"
     }
     stages {
-        stage('Build') {
+        stages('Build') {
             steps {
                 echo 'starting build'
                 sh "mvn clean deploy -Dmaven.test.skip=true"

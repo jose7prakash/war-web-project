@@ -10,7 +10,7 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            steps {
+            
                 environment {
                     scannerHome = tool 'jp-sonar-scanner'
                 }
@@ -23,4 +23,4 @@ pipeline {
                }
         }
     }
-}
+
